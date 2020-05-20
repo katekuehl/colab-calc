@@ -1,0 +1,31 @@
+.btn {
+    width: 50px;
+    height: 50px;
+}
+
+#enter {
+    height: 50px;
+    width: 100px;
+    margin-left: 100px;
+}
+
+textarea {
+    width: 200px;
+}
+
+#calctable {
+    margin: 50px;
+}
+
+#calculator {
+    background: lightgray;
+    padding: 25px;
+    min-width: 200px;
+    max-width: 400px;
+}
+
+textarea {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 25px;
+}
