@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import CalcButton from './Button.js';
 import Button from 'react-bootstrap/Button';
-import './TextEdit.css';
+import './TextEdit.scss';
 
 class TextEdit extends Component {
   render() {
     return (
       <div id="calculator">
-        <h3>
+        <h1>
           Collaborative Calculator
-        </h3>
-        <textarea
-          placeholder="Write something here..."
+        </h1>
+        <input
+          placeholder="Type Here..."
           >
-        </textarea>
+        </input>
         <table id="calctable">
             <tr>
                 <CalcButton text="7"/><CalcButton text="8"/><CalcButton text="9"/><CalcButton text="/"/>

@@ -1,0 +1,62 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+
+.btn {
+    width: 50px;
+    height: 50px;
+}
+
+#enter {
+    height: 50px;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display:block;
+}
+
+#calctable {
+    margin: 50px auto;
+}
+
+#calculator {
+    padding: 25px;
+    margin: 25px;
+    min-width: 200px;
+    max-width: 400px;
+    box-shadow: $purple 7px 0px 0px 0px, $purple -7px 0px 0px 0px;
+    border-radius: 10px;
+    border-color: $purple;
+}
+
+input {
+
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    display:block;
+    width: 250px;
+    padding: 10px;
+    border: none;
+    background-color: $blue;
+    color: white;
+    border-radius: 5px;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Jost', sans-serif;
+    font-size: 32px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: white;
+}
