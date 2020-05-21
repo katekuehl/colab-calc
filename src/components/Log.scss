@@ -1,0 +1,47 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+
+#log {
+    padding: 25px;
+    margin: 25px;
+    width: 350px;
+    box-shadow: $yellow 7px 0px 0px 0px, $yellow -7px 0px 0px 0px;
+    border-radius: 10px;
+}
+
+h2 {
+    text-align: left;
+    font-family: 'Jost', sans-serif;
+    font-size: 32px;
+
+}
+
+/* Source: https://css-tricks.com/custom-list-number-styling/ */
+
+ol {
+  max-width: 350px;
+  counter-reset: my-awesome-counter;
+  list-style: none;
+  padding-left: 40px;
+}
+ol li {
+  margin: 1rem 1rem 0.5rem 0;
+  counter-increment: my-awesome-counter;
+  position: relative;
+}
+ol li::before {
+  content: counter(my-awesome-counter);
+  color: #fcd000;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: absolute;
+  --size: 32px;
+  left: calc(-1 * var(--size) - 10px);
+  line-height: var(--size);
+  width: var(--size);
+  height: var(--size);
+  top: -5px;
+  background: $white;
+  border-radius: 50%;
+  text-align: center;
+}

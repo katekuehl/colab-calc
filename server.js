@@ -1,13 +1,36 @@
-const io = require('socket.io')();
-io.on('connection', (client) => {
-  //here can start emitting events to the client
-  client.on('subscribeToTimer', (interval) => {
-    console.log('client is subscribing to timer with interval ', interval);
-    setInterval(() => {
-      client.emit( 'timer', new Date() );
-    }, interval);
-  });
-})
-const port = 8000;
-io.listen(port);
-console.log('server.js - listening on port: ', port);
+const express = require("express");
+var cors = require('cors')
+
+const app = express();
+const bodyparser = require("body-parser");
+
+const port = process.env.PORT || 3200;
+
+app.use(bodyparser.json());
+app.use(bodyparser.urlencoded({ extended: false }));
+
+app.use(cors())
+
+const logs = [];
+
+app.get("/get_logs", (req, res) => {
+  res.status(200).send(logs);
+});
+
+app.post("/new_log", (req, res) => {
+  const log = req.body;
+
+    logs.unshift(log);
+
+    if (logs.length > 10) {
+        logs.pop();
+    }
+
+    res.status(200).json({
+      message: "Log created successfully"
+    });
+});
+
+app.listen(port, () => {
+  console.log(`running at port ${port}`);
+});

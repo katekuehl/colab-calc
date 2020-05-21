@@ -21,14 +21,12 @@
 #calculator {
     padding: 25px;
     margin: 25px;
-    min-width: 200px;
-    max-width: 400px;
-    box-shadow: $purple 7px 0px 0px 0px, $purple -7px 0px 0px 0px;
+    width: 350px;
+    box-shadow: $blue 7px 0px 0px 0px, $blue -7px 0px 0px 0px;
     border-radius: 10px;
-    border-color: $purple;
 }
 
-input {
+#input{
 
     margin-top: 30px;
     margin-left: auto;

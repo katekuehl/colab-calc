@@ -2,7 +2,9 @@
   text-align: center;
 }
 
-.container {
-  display: grid;
-  grid-template-columns: auto auto;
+#container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
 }
