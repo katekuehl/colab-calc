@@ -20,7 +20,7 @@ class App extends Component  {
     }
 
   updateLogs = () => {
-    fetch("http://localhost:3200/get_logs")
+    fetch("/get_logs")
             .then(response => response.json())
             .then(data => this.setState({ logs: data }));
   }
@@ -31,7 +31,7 @@ class App extends Component  {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ log: log })
         };
-    fetch('http://localhost:3200/new_log', requestOptions)
+    fetch('/new_log', requestOptions)
         .then(async response => {
             const data = await response.json();
 
