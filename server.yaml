@@ -12,11 +12,6 @@ resources:
 
 # [START handlers]
 handlers:
-  - url: /(.*\.(gif|png|jpg|css|js)(|\.map))$
-    static_files: build/\1
-    upload: build/(.*)(|\.map)
-
-  - url: /(.*)
-    static_files: build/index.html
-    upload: build/index.html
+  - url: /api/.*
+    script: auto
 # [END handlers]
