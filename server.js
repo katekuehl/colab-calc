@@ -1,3 +1,4 @@
+var path = require('path');
 const express = require("express");
 var cors = require("cors");
 
@@ -30,6 +31,12 @@ app.post("/api/new_log", (req, res) => {
     message: "Log created successfully",
   });
 });
+
+app.get("/", (req, res) => {
+  console.log(path.join(__dirname, "/build/index.html"));
+  res.sendFile(path.join(__dirname, "/build/index.html"));
+});
+
 
 app.listen(port, () => {
   console.log(`running at port ${port}`);
