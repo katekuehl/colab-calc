@@ -1,3 +1,25 @@
-runtime: nodejs10
+# [START runtime]
+runtime: nodejs
+env: flex
 
-instance_class: F2
+manual_scaling:
+  instances: 1
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
+# [END runtime]
+
+# [START handlers]
+handlers:
+  - url: /
+    static_files: build/index.html
+    upload: build/index.html
+
+  - url: /api/.*
+    script: auto
+
+  - url: /(.*)
+    static_files: build/\1
+    upload: build/(.*)
+# [END handlers]

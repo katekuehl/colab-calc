@@ -1,4 +1,3 @@
-const logs =  [
-];
+const logs = [];
 
 export default logs;

@@ -1,5 +1,5 @@
 const express = require("express");
-var cors = require('cors')
+var cors = require("cors");
 
 const app = express();
 const bodyparser = require("body-parser");
@@ -9,26 +9,26 @@ const port = process.env.PORT || 3200;
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: false }));
 
-app.use(cors())
+app.use(cors());
 
 const logs = [];
 
-app.get("/get_logs", (req, res) => {
+app.get("/api/get_logs", (req, res) => {
   res.status(200).send(logs);
 });
 
-app.post("/new_log", (req, res) => {
+app.post("/api/new_log", (req, res) => {
   const log = req.body;
 
-    logs.unshift(log);
+  logs.unshift(log);
 
-    if (logs.length > 10) {
-        logs.pop();
-    }
+  if (logs.length > 10) {
+    logs.pop();
+  }
 
-    res.status(200).json({
-      message: "Log created successfully"
-    });
+  res.status(200).json({
+    message: "Log created successfully",
+  });
 });
 
 app.listen(port, () => {

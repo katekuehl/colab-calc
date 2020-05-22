@@ -1,5 +1,4 @@
 {
-  "homepage": "http://katekuehl.github.io/calc-app",
   "name": "sezzle-test",
   "version": "0.1.0",
   "private": true,
@@ -24,15 +23,14 @@
     "socket.io": "^2.3.0"
   },
   "scripts": {
+    "prestart": "npm install -g serve",
     "client": "react-scripts start",
     "server": "node server.js",
-    "start": "react-scripts start & node server.js",
+    "start": "serve -s build & node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "eject": "react-scripts eject",
+    "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\""
   },
   "browserslist": {
     "production": [
@@ -48,9 +46,10 @@
   },
   "devDependencies": {
     "@types/jest": "^25.2.3",
+    "concurrently": "3.5.1",
     "gh-pages": "^2.2.0",
     "nodemon": "^2.0.4",
-    "react-test-renderer": "^16.13.1",
-    "concurrently": "3.5.1"
+    "prettier": "^2.0.5",
+    "react-test-renderer": "^16.13.1"
   }
 }
