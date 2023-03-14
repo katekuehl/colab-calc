@@ -4,6 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, run:
 
+### `npm install express`
 ### `node server.js`
 
 Starts the server that logs the data
